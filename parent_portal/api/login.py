@@ -148,6 +148,42 @@ def get_current_user_simple():
         # Try different ways to find PP User
         pp_user = None
         pp_user_name = frappe.db.get_value("PP User", {"user": frappe.session.user}, "name")
+        
+        # If PP User doesn't exist but user has PP User role, create it
+        if not pp_user_name:
+            user_roles = [d.role for d in frappe.get_doc("User", frappe.session.user).roles]
+            debug_info["user_roles"] = user_roles
+            
+            if "PP User" in user_roles:
+                debug_info["creating_pp_user"] = True
+                # Check if user has SIS Person record
+                sis_person = frappe.db.get_value("SIS Person", {"email": frappe.session.user}, ["name", "primary_role"], as_dict=True)
+                debug_info["sis_person_found"] = sis_person
+                
+                try:
+                    # Create PP User record
+                    pp_user_doc = frappe.new_doc("PP User")
+                    pp_user_doc.user = frappe.session.user
+                    pp_user_doc.full_name = user_doc.full_name
+                    pp_user_doc.enabled = 1
+                    
+                    if sis_person:
+                        pp_user_doc.person = sis_person.name
+                        pp_user_doc.sis_role = sis_person.primary_role
+                    else:
+                        # Default to Teacher if no SIS Person found
+                        pp_user_doc.sis_role = "Teacher"
+                    
+                    pp_user_doc.insert(ignore_permissions=True)
+                    frappe.db.commit()
+                    
+                    pp_user_name = pp_user_doc.name
+                    debug_info["pp_user_created"] = True
+                    debug_info["new_pp_user_name"] = pp_user_name
+                    
+                except Exception as create_error:
+                    debug_info["pp_user_creation_error"] = str(create_error)
+        
         if pp_user_name:
             pp_user = frappe.db.get_value(
                 "PP User", 
