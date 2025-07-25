@@ -206,8 +206,8 @@ def get_current_user_info():
     return pp_user
 
 
-@frappe.whitelist()
-def get_current_user_simple(allow_guest=True):
+@frappe.whitelist(allow_guest=True)
+def get_current_user_simple():
     """Simple endpoint to get current user info without complex permissions"""
     if frappe.session.user == "Guest":
         frappe.throw("Not logged in", frappe.AuthenticationError)
