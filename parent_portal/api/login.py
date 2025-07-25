@@ -122,3 +122,54 @@ def get_current_user_info():
     pp_user.person = person_info.as_dict()
 
     return pp_user
+
+
+@frappe.whitelist()
+def get_current_user_simple():
+    """Simple endpoint to get current user info without complex permissions"""
+    if frappe.session.user == "Guest":
+        frappe.throw("Not logged in", frappe.AuthenticationError)
+    
+    try:
+        # Get basic user info
+        user_doc = frappe.get_doc("User", frappe.session.user)
+        
+        # Try to get PP User if exists
+        pp_user = None
+        if frappe.db.exists("PP User", {"user": frappe.session.user}):
+            pp_user = frappe.db.get_value(
+                "PP User", 
+                {"user": frappe.session.user}, 
+                ["sis_role", "person", "full_name"], 
+                as_dict=True
+            )
+        
+        # Try to get SIS Person if PP User exists
+        person_info = None
+        if pp_user and pp_user.person:
+            if frappe.db.exists("SIS Person", pp_user.person):
+                person_info = frappe.db.get_value(
+                    "SIS Person",
+                    pp_user.person,
+                    ["name", "first_name", "last_name", "full_name", "email", "primary_role"],
+                    as_dict=True
+                )
+        
+        return {
+            "user": frappe.session.user,
+            "full_name": user_doc.full_name,
+            "email": user_doc.email,
+            "pp_user": pp_user,
+            "person": person_info,
+            "sis_role": pp_user.sis_role if pp_user else None,
+            "primary_role": person_info.primary_role if person_info else None
+        }
+        
+    except Exception as e:
+        frappe.log_error(f"Error in get_current_user_simple: {str(e)}")
+        return {
+            "user": frappe.session.user,
+            "full_name": user_doc.full_name if 'user_doc' in locals() else None,
+            "email": frappe.session.user,
+            "error": str(e)
+        }
