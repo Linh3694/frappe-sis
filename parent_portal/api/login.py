@@ -113,6 +113,88 @@ def reset_password(email: str, send_email: bool = False) -> str:
 
 
 @frappe.whitelist()
+def get_user_info_after_login():
+    """Get user info immediately after login - reliable endpoint"""
+    if frappe.session.user == "Guest":
+        frappe.throw("Not logged in", frappe.AuthenticationError)
+    
+    try:
+        user_email = frappe.session.user
+        
+        # Get basic user info từ User doctype
+        user_doc = frappe.get_doc("User", user_email)
+        
+        # Tạo basic user info
+        user_info = {
+            "name": user_email,
+            "full_name": user_doc.full_name or user_email,
+            "email": user_email,
+            "first_name": user_doc.first_name or user_doc.full_name.split(' ')[0] if user_doc.full_name else 'User',
+            "user_image": user_doc.user_image or '',
+            "avatar": user_doc.user_image or ''
+        }
+        
+        # Thử get PP User để xác định role
+        pp_user_data = frappe.db.get_value(
+            "PP User", 
+            {"user": user_email}, 
+            ["sis_role", "person"], 
+            as_dict=True
+        )
+        
+        role = "Teacher"  # Default role
+        prefix = "teacher"  # Default prefix
+        
+        if pp_user_data and pp_user_data.sis_role:
+            if pp_user_data.sis_role == "Parent":
+                role = "Parent" 
+                prefix = ""
+            elif pp_user_data.sis_role == "Teacher":
+                role = "Teacher"
+                prefix = "teacher"
+        
+        # Nếu có SIS Person, lấy thêm thông tin
+        if pp_user_data and pp_user_data.person:
+            person_info = frappe.db.get_value(
+                "SIS Person",
+                pp_user_data.person,
+                ["first_name", "last_name", "full_name"],
+                as_dict=True
+            )
+            if person_info:
+                user_info.update({
+                    "first_name": person_info.first_name or user_info["first_name"],
+                    "full_name": person_info.full_name or user_info["full_name"]
+                })
+        
+        return {
+            "user": user_email,
+            "user_info": user_info,
+            "role": role,
+            "prefix": prefix,
+            "session_valid": True,
+            "pp_user_exists": bool(pp_user_data)
+        }
+        
+    except Exception as e:
+        frappe.log_error(f"Error in get_user_info_after_login: {str(e)}")
+        return {
+            "user": frappe.session.user,
+            "user_info": {
+                "name": frappe.session.user,
+                "full_name": frappe.session.user,
+                "email": frappe.session.user,
+                "first_name": "User",
+                "user_image": "",
+                "avatar": ""
+            },
+            "role": "Teacher",
+            "prefix": "teacher", 
+            "session_valid": True,
+            "error": str(e)
+        }
+
+@frappe.whitelist()
 def get_current_user_info():
     pp_user = frappe.get_doc("PP User", {"user": frappe.session.user}, as_dict=True)
     if not pp_user:
