@@ -217,8 +217,7 @@ def get_current_user_simple():
             "pp_user": pp_user,
             "person": person_info,
             "sis_role": pp_user.get("sis_role") if pp_user else None,
-            "primary_role": person_info.get("primary_role") if person_info else None,
-            "debug": debug_info  # Include debug info
+            "primary_role": person_info.get("primary_role") if person_info else None
         }
         
     except Exception as e:
