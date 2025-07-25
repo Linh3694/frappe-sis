@@ -195,7 +195,7 @@ def get_user_info_after_login():
         }
 
 @frappe.whitelist()
-def get_current_user_info():
+def get_current_user_info(allow_guest=True):
     pp_user = frappe.get_doc("PP User", {"user": frappe.session.user}, as_dict=True)
     if not pp_user:
         return frappe.throw("User not found")
