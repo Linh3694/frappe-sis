@@ -1,0 +1,11 @@
+meta {
+  name: Get Logged User
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{url}}:{{port}}/api/method/frappe.auth.get_logged_user
+  body: none
+  auth: none
+}

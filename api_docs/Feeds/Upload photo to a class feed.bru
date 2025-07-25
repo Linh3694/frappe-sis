@@ -1,0 +1,15 @@
+meta {
+  name: Upload photo to a class feed
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{url}}:{{port}}/api/method/parent_portal.api.sis_feed.class_feed.get_class_feed_by_id?class_feed_id=pgejegh03t
+  body: none
+  auth: none
+}
+
+query {
+  class_feed_id: pgejegh03t
+}

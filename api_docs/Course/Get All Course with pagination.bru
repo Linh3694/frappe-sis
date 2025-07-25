@@ -1,0 +1,15 @@
+meta {
+  name: Get All Course with pagination
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{url}}:{{port}}/api/method/parent_portal.api.sis_course.course.get_all_course?filters={"title": ["like", "%V%"]}
+  body: none
+  auth: none
+}
+
+query {
+  filters: {"title": ["like", "%V%"]}
+}

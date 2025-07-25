@@ -1,0 +1,18 @@
+{
+  "name": "@parent-portal/prettier-config",
+  "private": true,
+  "version": "1.0.0",
+  "main": "./.prettierrc.js",
+  "author": {
+    "name": "Anh Minh Nguyen",
+    "email": "minhanhng.4an@gmail.com"
+  },
+  "scripts": {
+    "lint": "echo 'No linting configured.'",
+    "build": "echo 'No build configured.'"
+  },
+  "dependencies": {
+    "prettier": "3.1.1",
+    "prettier-plugin-tailwindcss": "0.5.11"
+  }
+}

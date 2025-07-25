@@ -1,0 +1,11 @@
+meta {
+  name: Get Current School Year
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{url}}:{{port}}/api/method/parent_portal.api.sis_school_year.school_year.get_current_school_year
+  body: none
+  auth: none
+}

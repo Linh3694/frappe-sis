@@ -1,0 +1,79 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-05-24 11:28:43.321720",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "family_key",
+  "home_address",
+  "status",
+  "children",
+  "guardians"
+ ],
+ "fields": [
+  {
+   "fieldname": "home_address",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Home Address",
+   "reqd": 1
+  },
+  {
+   "default": "Married",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Married\nSeparated\nDivorced\nDe Facto\nOther\nSingle",
+   "reqd": 1
+  },
+  {
+   "fieldname": "guardians",
+   "fieldtype": "Table",
+   "label": "Guardians",
+   "options": "SIS Family Guardian"
+  },
+  {
+   "fieldname": "children",
+   "fieldtype": "Table",
+   "label": "Children",
+   "options": "SIS Family Child"
+  },
+  {
+   "fieldname": "family_key",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "Family Key",
+   "search_index": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-09-30 10:22:11.124093",
+ "modified_by": "Administrator",
+ "module": "SIS",
+ "name": "SIS Family",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

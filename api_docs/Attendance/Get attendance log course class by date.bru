@@ -1,0 +1,16 @@
+meta {
+  name: Get attendance log course class by date
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{url}}:{{port}}/api/method/parent_portal.api.sis_attendance.attendance.get_attendance_log_course_class_by_date?course_class_id=5b60cd167a&date=2024-07-20
+  body: none
+  auth: none
+}
+
+query {
+  course_class_id: 5b60cd167a
+  date: 2024-07-20
+}

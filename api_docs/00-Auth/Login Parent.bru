@@ -1,0 +1,22 @@
+meta {
+  name: Login Parent
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{url}}:{{port}}/api/method/login
+  body: json
+  auth: none
+}
+
+params:query {
+  : 
+}
+
+body:json {
+  {
+    "usr": "kienthai@gmail.com",
+    "pwd": "123gua321"
+  }
+}

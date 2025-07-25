@@ -1,0 +1,33 @@
+meta {
+  name: Guardian Registration
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{url}}:{{port}}/api/method/parent_portal.api.sis_guardian.registration.input_guardian_registration
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "doc": {
+      "full_name": "Nguyễn Văn Quỳnh",
+      "first_name": "Quỳnh",
+      "date_of_birth": null,
+      "nationality" : "",
+      "email" : "vanquynh@gmail.com",
+      "phone_number" : "0909848380",
+      "address" : "146/14/7 Vũ Tùng",
+      "province" : "TP. HCM",
+      "district" : "Quận Bình Thạnh,",
+      "ward" : "",
+      "company" : "",
+      "job_title" : "",
+      "relationship_with_student": "Father",
+      "family": "qea7a3q5f7",
+      "person": "qcv7chnpps"
+    }
+  }
+}

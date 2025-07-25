@@ -1,0 +1,15 @@
+meta {
+  name: Get Course by ID
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{url}}:{{port}}/api/method/parent_portal.api.sis_course.course.get_course_by_id?course_id=6d49aa7391
+  body: none
+  auth: none
+}
+
+query {
+  course_id: 6d49aa7391
+}

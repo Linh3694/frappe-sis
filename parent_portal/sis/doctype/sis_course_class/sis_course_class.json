@@ -1,0 +1,238 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-06-17 14:15:14.374248",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "course_section",
+  "school_year",
+  "column_break_lbyk",
+  "course",
+  "course_class_section",
+  "title",
+  "short_title",
+  "description",
+  "column_break_zovm",
+  "enrollment_min",
+  "enrollment_max",
+  "class_type",
+  "attendance",
+  "participants_section",
+  "get_from",
+  "get_participants",
+  "column_break_azja",
+  "from_school_class",
+  "from_grade_level",
+  "section_break_hkzp",
+  "participants",
+  "section_break_adyn",
+  "total_students",
+  "timetable_tab",
+  "timetable",
+  "timetable_day_row_class"
+ ],
+ "fields": [
+  {
+   "fieldname": "course",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Course",
+   "options": "SIS Course",
+   "reqd": 1
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Title",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "short_title",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Short Title",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "enrollment_min",
+   "fieldtype": "Int",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Enrollment Min"
+  },
+  {
+   "fieldname": "enrollment_max",
+   "fieldtype": "Int",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Enrollment Max"
+  },
+  {
+   "default": "0",
+   "fieldname": "attendance",
+   "fieldtype": "Check",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Attendance",
+   "options": "Yes\nNo",
+   "reqd": 1
+  },
+  {
+   "fieldname": "timetable_tab",
+   "fieldtype": "Tab Break",
+   "label": "Timetable"
+  },
+  {
+   "fieldname": "column_break_zovm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "School Class",
+   "fieldname": "class_type",
+   "fieldtype": "Select",
+   "label": "Class Type",
+   "options": "School Class\nElective Class\nSchool Club\nOther",
+   "reqd": 1
+  },
+  {
+   "fieldname": "participants_section",
+   "fieldtype": "Section Break",
+   "label": "Get Participants"
+  },
+  {
+   "bold": 1,
+   "fieldname": "get_participants",
+   "fieldtype": "Button",
+   "label": "Get Participants"
+  },
+  {
+   "fieldname": "column_break_azja",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_hkzp",
+   "fieldtype": "Section Break",
+   "label": "Participants"
+  },
+  {
+   "fieldname": "participants",
+   "fieldtype": "Table",
+   "label": "Participants",
+   "options": "SIS Course Class Person"
+  },
+  {
+   "depends_on": "eval:doc.get_from == 'School Class'",
+   "fieldname": "from_school_class",
+   "fieldtype": "Link",
+   "label": "School Class",
+   "options": "SIS School Class"
+  },
+  {
+   "depends_on": "eval:doc.get_from == 'Grade Level'",
+   "fieldname": "from_grade_level",
+   "fieldtype": "Link",
+   "label": "Grade Level",
+   "options": "SIS School Grade Level"
+  },
+  {
+   "default": "School Class",
+   "fieldname": "get_from",
+   "fieldtype": "Select",
+   "label": "From",
+   "options": "School Class\nGrade Level"
+  },
+  {
+   "fieldname": "timetable_day_row_class",
+   "fieldtype": "Table",
+   "label": "Periods",
+   "options": "SIS Timetable Day Row Class"
+  },
+  {
+   "fieldname": "timetable",
+   "fieldtype": "Link",
+   "label": "Timetable",
+   "options": "SIS Timetable"
+  },
+  {
+   "fieldname": "course_section",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "school_year",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "School Year",
+   "options": "SIS School Year",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_lbyk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "course_class_section",
+   "fieldtype": "Section Break",
+   "label": "Course Class"
+  },
+  {
+   "fieldname": "section_break_adyn",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_students",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Total Students",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-09-23 18:26:38.396620",
+ "modified_by": "Administrator",
+ "module": "SIS",
+ "name": "SIS Course Class",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "show_title_field_in_link": 1,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "title",
+ "translated_doctype": 1
+}

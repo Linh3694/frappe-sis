@@ -1,0 +1,15 @@
+meta {
+  name: Get school feed by ID
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{url}}:{{port}}/api/method/parent_portal.api.sis_feed.school_feed.get_school_feed_by_id?school_feed_id=77363f070d
+  body: none
+  auth: none
+}
+
+query {
+  school_feed_id: 77363f070d
+}

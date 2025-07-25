@@ -1,0 +1,33 @@
+meta {
+  name: Create Attendance Log School Class
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{url}}:{{port}}/api/method/parent_portal.api.sis_attendance.attendance.create_attendance_log_school_class
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "doc": {
+      "school_class": "j40hvsdmbc",
+      "student_list": [
+        {
+          "person": "j5nl324m7s",
+          "attendance_code": "Late"
+        },
+        {
+          "person": "j6bsvij8rc",
+          "attendance_code": "Late"
+        },
+        {
+          "person": "j6n68hjrj1",
+          "attendance_code": "Present"
+        }
+      ]
+    }
+  }
+}

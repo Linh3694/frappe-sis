@@ -1,0 +1,159 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-06-14 17:32:28.388066",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "school_year",
+  "title",
+  "description",
+  "content",
+  "thumbnail",
+  "status",
+  "public_time",
+  "grade_levels",
+  "to_all_schools",
+  "to_primary_school",
+  "to_middle_school",
+  "to_high_school",
+  "display_pdf",
+  "display_image"
+ ],
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Title",
+   "reqd": 1
+  },
+  {
+   "fieldname": "school_year",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "School Year",
+   "options": "SIS School Year",
+   "reqd": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "content",
+   "fieldtype": "Text Editor",
+   "label": "Content"
+  },
+  {
+   "fieldname": "thumbnail",
+   "fieldtype": "Attach Image",
+   "label": "Thumbnail",
+   "reqd": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Draft\nWaiting Approval\nPublic",
+   "reqd": 1
+  },
+  {
+   "fieldname": "public_time",
+   "fieldtype": "Datetime",
+   "label": "Public time"
+  },
+  {
+   "fieldname": "grade_levels",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Grade Levels",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "to_all_schools",
+   "fieldtype": "Check",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "To All Schools"
+  },
+  {
+   "default": "0",
+   "fieldname": "to_primary_school",
+   "fieldtype": "Check",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "To Primary School",
+   "read_only_depends_on": "eval:doc.to_all_schools==1"
+  },
+  {
+   "default": "0",
+   "fieldname": "to_middle_school",
+   "fieldtype": "Check",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "To Middle School",
+   "read_only_depends_on": "eval:doc.to_all_schools==1"
+  },
+  {
+   "default": "0",
+   "fieldname": "to_high_school",
+   "fieldtype": "Check",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "To High School",
+   "read_only_depends_on": "eval:doc.to_all_schools==1"
+  },
+  {
+   "fieldname": "display_pdf",
+   "fieldtype": "Attach",
+   "label": "Display PDF"
+  },
+  {
+   "fieldname": "display_image",
+   "fieldtype": "Attach Image",
+   "label": "Display Image"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-07-28 12:11:24.490115",
+ "modified_by": "Administrator",
+ "module": "SIS",
+ "name": "SIS School Feed",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "show_title_field_in_link": 1,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "title"
+}

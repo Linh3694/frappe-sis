@@ -1,0 +1,17 @@
+.DS_Store
+*.pyc
+*.egg-info
+*.swp
+tags
+node_modules
+__pycache__
+
+api_docs/environments/development.bru
+frappe-bench
+parent_portal/public/frontend
+parent_portal/www/frontend.html
+parent_portal/public/parent_portal
+parent_portal/www/parent_portal.html
+.VSCodeCounter/
+.yarn
+.yarnrc.yml

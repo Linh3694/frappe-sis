@@ -1,0 +1,23 @@
+meta {
+  name: Login
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{url}}:{{port}}/api/method/login
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "usr": "teacher@gmail.com",
+    "pwd": "Abc@123"
+  }
+}
+
+assert {
+  res.status: eq 200
+  res.body.message: eq "Logged In"
+}

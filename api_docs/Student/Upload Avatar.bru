@@ -1,0 +1,30 @@
+meta {
+  name: Upload Avatar
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{url}}:{{port}}/api/method/parent_portal.api.sis_student.upload_avatar.upload_avatar
+  body: multipartForm
+  auth: none
+}
+
+body:json {
+  {
+    "doc": {
+      "class_type": "Course Class",
+      "course_class": "4v2l4u83bt",
+      "title": "Class Activity of Course Class ",
+      "description": "description",
+      "content": "content",
+      "public_time": "2024-08-08 15:30:30",
+      "status": "Draft"
+    }
+  }
+}
+
+body:multipart-form {
+  replace: false
+  avatar: @file(/Users/minhdh/Documents/Ly.jpg)
+}

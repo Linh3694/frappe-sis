@@ -1,0 +1,25 @@
+meta {
+  name: Create Class Activity For School Class
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{url}}:{{port}}/api/method/parent_portal.api.sis_feed.class_feed.create_class_feed
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "doc": {
+      "class_type": "School Class",
+      "school_class": "8gg6uednn1",
+      "title": "Class Activity of School Class ",
+      "description": "description",
+      "content": "content",
+      "public_time": "2024-08-08 15:30:30",
+      "status": "Draft"
+    }
+  }
+}

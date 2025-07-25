@@ -1,0 +1,16 @@
+meta {
+  name: Get individual attendance history by date
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{url}}:{{port}}/api/method/parent_portal.api.sis_attendance.attendance.get_individual_attendance_history_by_date?person_id=afd44d1e30&date=2024-07-17
+  body: none
+  auth: none
+}
+
+query {
+  person_id: afd44d1e30
+  date: 2024-07-17
+}

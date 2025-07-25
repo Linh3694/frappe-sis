@@ -1,0 +1,72 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-05-24 10:35:05.628160",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "school_year_setting_section",
+  "founding_year",
+  "current_school_year",
+  "email_setting_section",
+  "welcome_guardian_email_template"
+ ],
+ "fields": [
+  {
+   "default": "2014",
+   "fieldname": "founding_year",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Founding Year",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "current_school_year",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Current School Year",
+   "options": "SIS School Year",
+   "reqd": 1
+  },
+  {
+   "fieldname": "school_year_setting_section",
+   "fieldtype": "Section Break",
+   "label": "School Year Setting"
+  },
+  {
+   "fieldname": "email_setting_section",
+   "fieldtype": "Section Break",
+   "label": "Email Setting"
+  },
+  {
+   "fieldname": "welcome_guardian_email_template",
+   "fieldtype": "Link",
+   "label": "Welcome Guardian Email Template",
+   "options": "Email Template"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2024-10-01 09:56:12.721373",
+ "modified_by": "Administrator",
+ "module": "SIS",
+ "name": "SIS Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

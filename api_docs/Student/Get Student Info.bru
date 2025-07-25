@@ -1,0 +1,15 @@
+meta {
+  name: Get Student Info
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{url}}:{{port}}/api/method/parent_portal.api.sis_student.student.get_student_info?person_id=8fhvk9ggl4
+  body: none
+  auth: none
+}
+
+params:query {
+  person_id: 8fhvk9ggl4
+}

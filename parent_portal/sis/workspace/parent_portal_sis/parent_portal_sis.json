@@ -1,0 +1,234 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"YYO7ST2SLW\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Parent Portal SIS</span>\",\"col\":12}},{\"id\":\"MmuVu9XXFj\",\"type\":\"card\",\"data\":{\"card_name\":\"School Year\",\"col\":4}},{\"id\":\"mSmiZn7PZu\",\"type\":\"card\",\"data\":{\"card_name\":\"School Class & Course\",\"col\":4}},{\"id\":\"GoKsVztMRS\",\"type\":\"card\",\"data\":{\"card_name\":\"Student & Instructor\",\"col\":4}},{\"id\":\"dgqX1jsvX7\",\"type\":\"card\",\"data\":{\"card_name\":\"News & Activities\",\"col\":4}},{\"id\":\"yExHS9zXOy\",\"type\":\"card\",\"data\":{\"card_name\":\"Timetable\",\"col\":4}},{\"id\":\"zLJYhKyzTw\",\"type\":\"card\",\"data\":{\"card_name\":\"Attendance\",\"col\":4}}]",
+ "creation": "2024-07-03 10:56:26.422123",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "color-review-points",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Parent Portal SIS",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "School Year",
+   "link_count": 2,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Academic Years",
+   "link_count": 0,
+   "link_to": "SIS School Year",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "School Year Terms",
+   "link_count": 0,
+   "link_to": "SIS School Year Term",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Student & Instructor",
+   "link_count": 2,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Students",
+   "link_count": 0,
+   "link_to": "SIS Student",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Families",
+   "link_count": 0,
+   "link_to": "SIS Family",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "News & Activities",
+   "link_count": 2,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "News & Events",
+   "link_count": 0,
+   "link_to": "SIS School Feed",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Class Activities",
+   "link_count": 0,
+   "link_to": "SIS Class Feed",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Timetable",
+   "link_count": 3,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Timetables",
+   "link_count": 0,
+   "link_to": "SIS Timetable",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Timetable Columns",
+   "link_count": 0,
+   "link_to": "SIS Timetable Column",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Timetable Scheduling Tool",
+   "link_count": 0,
+   "link_to": "SIS Timetable Scheduling Tool",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "School Class & Course",
+   "link_count": 3,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "School Classes",
+   "link_count": 0,
+   "link_to": "SIS School Class",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Courses",
+   "link_count": 0,
+   "link_to": "SIS Course",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Course Classes",
+   "link_count": 0,
+   "link_to": "SIS Course Class",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Attendance",
+   "link_count": 3,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Attendance Code",
+   "link_count": 0,
+   "link_to": "SIS Attendance Code",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Attendance by School Class",
+   "link_count": 0,
+   "link_to": "SIS Attendance Log School Class",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Attendance by Course",
+   "link_count": 0,
+   "link_to": "SIS Attendance Log Course Class",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2024-07-15 17:50:51.561877",
+ "modified_by": "Administrator",
+ "module": "SIS",
+ "name": "Parent Portal SIS",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 31.0,
+ "shortcuts": [],
+ "title": "Parent Portal SIS"
+}

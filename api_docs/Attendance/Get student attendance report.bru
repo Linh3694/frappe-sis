@@ -1,0 +1,17 @@
+meta {
+  name: Get student attendance report
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{url}}:{{port}}/api/method/parent_portal.api.sis_attendance.attendance.get_student_attendance_report?person_id=j5nl324m7s&first_day=2024-07-01&last_day=2025-12-31
+  body: none
+  auth: none
+}
+
+params:query {
+  person_id: j5nl324m7s
+  first_day: 2024-07-01
+  last_day: 2025-12-31
+}

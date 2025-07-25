@@ -1,0 +1,25 @@
+meta {
+  name: Create Attendance Log Course Class
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{url}}:{{port}}/api/method/parent_portal.api.sis_attendance.attendance.create_attendance_log_course_class
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "doc": {
+      "course_class": "95k77g19ph",
+      "student_list": [
+        {
+          "person": "8aq6gdpl6p",
+          "attendance_code": "Late"
+        }
+      ]
+    }
+  }
+}

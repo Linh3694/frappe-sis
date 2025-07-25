@@ -1,0 +1,19 @@
+meta {
+  name: Get all school feed with pagination
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{url}}:{{port}}/api/method/parent_portal.api.sis_feed.school_feed.get_all_school_feed?type=All Schools
+  body: none
+  auth: none
+}
+
+params:query {
+  type: All Schools
+  ~type: High School
+  ~type: Middle School
+  ~type: Primary School
+  ~person_id: euj2v1lado
+}

@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+    "aaron-bond.better-comments",
+    "streetsidesoftware.code-spell-checker",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "yoavbls.pretty-ts-errors",
+    "meganrogge.template-string-converter",
+    "wayou.vscode-todo-highlight",
+    "streetsidesoftware.code-spell-checker-vietnamese",
+    "bradlc.vscode-tailwindcss",
+  ]
+}

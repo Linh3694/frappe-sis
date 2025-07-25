@@ -1,0 +1,40 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-09-13 11:31:41.541156",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "guar_regis_exclude"
+ ],
+ "fields": [
+  {
+   "fieldname": "guar_regis_exclude",
+   "fieldtype": "Small Text",
+   "label": "Guardian Registration Exclude (;)"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2024-09-13 11:35:23.699313",
+ "modified_by": "Administrator",
+ "module": "Parent Portal",
+ "name": "PP Variable Setting",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

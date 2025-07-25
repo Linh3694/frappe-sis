@@ -1,0 +1,15 @@
+meta {
+  name: Get All Academic Year Event with pagination
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{url}}:{{port}}/api/method/parent_portal.api.sis_school_year.school_year.get_all_academic_year_events?filters={"start_date": [">","2024-10-12"]}
+  body: none
+  auth: none
+}
+
+params:query {
+  filters: {"start_date": [">","2024-10-12"]}
+}

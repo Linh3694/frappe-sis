@@ -1,0 +1,17 @@
+meta {
+  name: Get Course Class by ID
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{url}}:{{port}}/api/method/parent_portal.api.sis_course.course_class.get_course_class_by_id?course_class_id=tkoao8slco&attendance_check=true
+  body: none
+  auth: none
+}
+
+params:query {
+  course_class_id: tkoao8slco
+  attendance_check: true
+  ~attendance_date: 2024-07-25
+}

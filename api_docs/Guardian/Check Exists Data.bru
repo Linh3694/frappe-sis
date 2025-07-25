@@ -1,0 +1,15 @@
+meta {
+  name: Check Exists Data
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{url}}:{{port}}/api/method/parent_portal.api.sis_guardian.registration.check_exists_email?in_email=kimthao.ueh@gmail.com
+  body: none
+  auth: none
+}
+
+params:query {
+  in_email: kimthao.ueh@gmail.com
+}

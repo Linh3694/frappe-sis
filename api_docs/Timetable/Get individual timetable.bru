@@ -1,0 +1,17 @@
+meta {
+  name: Get individual timetable
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{url}}:{{port}}/api/method/parent_portal.api.sis_timetable.timetable.get_individual_timetable?person_id=sg98n6mtbm&type=admin&start_date=2024-08-19
+  body: none
+  auth: none
+}
+
+params:query {
+  person_id: sg98n6mtbm
+  type: admin
+  start_date: 2024-08-19
+}

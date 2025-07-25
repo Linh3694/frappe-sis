@@ -1,0 +1,16 @@
+meta {
+  name: Get attendance log school class by date
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{url}}:{{port}}/api/method/parent_portal.api.sis_attendance.attendance.get_attendance_log_school_class_by_date?school_class_id=j40hvsdmbc&date=2024-07-20
+  body: none
+  auth: none
+}
+
+params:query {
+  school_class_id: j40hvsdmbc
+  date: 2024-07-20
+}

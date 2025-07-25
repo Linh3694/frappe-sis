@@ -1,0 +1,18 @@
+meta {
+  name: Get all class feed with pagination
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{url}}:{{port}}/api/method/parent_portal.api.sis_feed.class_feed.get_all_class_feed?person_id=euj2v1lado&filters={"course_class": "9nm2pa3gvl"}
+  body: none
+  auth: none
+}
+
+params:query {
+  person_id: euj2v1lado
+  filters: {"course_class": "9nm2pa3gvl"}
+  ~filters: {"school_class": ["in", ["j40hvsdmbc"]]}
+  ~course_class_id: e5qs9s69cv
+}

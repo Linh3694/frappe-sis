@@ -1,0 +1,18 @@
+meta {
+  name: Get student attendance summary
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{url}}:{{port}}/api/method/parent_portal.api.sis_attendance.attendance.get_attendance_student_summary?person_id=afd44d1e30&first_day=2024-07-01&last_day=2025-12-31
+  body: none
+  auth: none
+}
+
+query {
+  person_id: afd44d1e30
+  first_day: 2024-07-01
+  last_day: 2025-12-31
+  ~school_year_term_id: pqedumqiet
+}

@@ -1,0 +1,85 @@
+{
+  "React functional component": {
+    "scope": "typescriptreact",
+    "prefix": "rfc",
+    "body": [
+      "import { HTMLAttributes,type FC } from 'react'",
+      "import { cn } from '@/core/utils/shadcn-utils'",
+      "",
+      "export type ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}}Props = HTMLAttributes<HTMLDivElement> & {}",
+      "",
+      "export const ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}: FC<${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}Props> = ({ className }) => {",
+      "  return <div className={cn(className)}>${4:$TM_FILENAME_BASE}</div>",
+      "}",
+      ""
+    ],
+    "description": "Creates a React functional component"
+  },
+  "React FC forwardRef": {
+    "scope": "typescriptreact",
+    "prefix": "rfcref",
+    "body": [
+      "import { forwardRef, type HTMLAttributes } from 'react'",
+      "",
+      "export interface ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}}Props extends HTMLAttributes<${2:HTMLDivElement}> {}",
+      "",
+      "export const ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}} = forwardRef<${2:HTMLDivElement}, ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}}Props>(",
+      "  ({ ...props }, ref) => {",
+      "    return (",
+      "      <div ref={ref} {...props}>",
+      "        ${3:$TM_FILENAME_BASE}",
+      "      </div>",
+      "    )",
+      "  },",
+      ")",
+      ""
+    ]
+  },
+  "Export react component": {
+    "scope": "typescript",
+    "prefix": "erfc",
+    "body": [
+      "export { default } from './${TM_DIRECTORY/^.+\\/(.*)$/$1/}'",
+      "export * from './${TM_DIRECTORY/^.+\\/(.*)$/$1/}'",
+      ""
+    ]
+  },
+  "Export lazy component": {
+    "scope": "typescript",
+    "prefix": "erfclz",
+    "body": [
+      "import { lazy } from 'react'",
+      "",
+      "const ${1:${TM_DIRECTORY/^.+\\/(.*)$/$1/}} = lazy(() => import('./${1:${TM_DIRECTORY/^.+\\/(.*)$/$1/}}'))",
+      "",
+      "export default ${1:${TM_DIRECTORY/^.+\\/(.*)$/$1/}}",
+      ""
+    ]
+  },
+  "Lazy page": {
+    "scope": "typescriptreact",
+    "prefix": "rpage",
+    "body": [
+      "import type { FC } from 'react'",
+      "",
+      "import { Forbidden } from '@/components/states'",
+      "import { Permission } from '@/core/utils/permission'",
+      "import { createPage } from '@/core/utils/route-guard'",
+      "",
+      "const PERMISSIONS: Permission[] = []",
+      "const DISPLAY_NAME = '${1:${TM_DIRECTORY/^.+\\/(.*)$/${1:/pascalcase}/}}'",
+      "",
+      "export const Route: FC = () => {",
+      "  return <>${1:${TM_DIRECTORY/^.+\\/(.*)$/${1:/pascalcase}/}}</>",
+      "}",
+      "",
+      "const Component = createPage(Route, PERMISSIONS, <Forbidden />)",
+      "",
+      "Route.displayName = `\\${DISPLAY_NAME\\}Page`",
+      "Component.displayName = DISPLAY_NAME",
+      "",
+      "export { Component }",
+      ""
+    ]
+  }
+}
