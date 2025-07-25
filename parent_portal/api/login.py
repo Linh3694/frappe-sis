@@ -134,20 +134,39 @@ def get_current_user_simple():
         # Get basic user info
         user_doc = frappe.get_doc("User", frappe.session.user)
         
-        # Try to get PP User if exists
+        # Debug: Log current user and check PP User existence
+        debug_info = {
+            "session_user": frappe.session.user,
+            "user_exists": frappe.db.exists("User", frappe.session.user),
+            "pp_user_exists": frappe.db.exists("PP User", {"user": frappe.session.user}),
+        }
+        
+        # Get all PP Users to debug
+        all_pp_users = frappe.db.get_all("PP User", fields=["name", "user", "sis_role", "person"])
+        debug_info["all_pp_users"] = all_pp_users
+        
+        # Try different ways to find PP User
         pp_user = None
-        if frappe.db.exists("PP User", {"user": frappe.session.user}):
+        pp_user_name = frappe.db.get_value("PP User", {"user": frappe.session.user}, "name")
+        if pp_user_name:
             pp_user = frappe.db.get_value(
                 "PP User", 
-                {"user": frappe.session.user}, 
-                ["sis_role", "person", "full_name"], 
+                pp_user_name,
+                ["sis_role", "person", "full_name", "user"], 
                 as_dict=True
             )
         
+        debug_info["pp_user_name"] = pp_user_name
+        debug_info["pp_user"] = pp_user
+        
         # Try to get SIS Person if PP User exists
         person_info = None
-        if pp_user and pp_user.person:
-            if frappe.db.exists("SIS Person", pp_user.person):
+        if pp_user and pp_user.get("person"):
+            person_exists = frappe.db.exists("SIS Person", pp_user.person)
+            debug_info["person_exists"] = person_exists
+            debug_info["person_name"] = pp_user.person
+            
+            if person_exists:
                 person_info = frappe.db.get_value(
                     "SIS Person",
                     pp_user.person,
@@ -161,8 +180,9 @@ def get_current_user_simple():
             "email": user_doc.email,
             "pp_user": pp_user,
             "person": person_info,
-            "sis_role": pp_user.sis_role if pp_user else None,
-            "primary_role": person_info.primary_role if person_info else None
+            "sis_role": pp_user.get("sis_role") if pp_user else None,
+            "primary_role": person_info.get("primary_role") if person_info else None,
+            "debug": debug_info  # Include debug info
         }
         
     except Exception as e:
@@ -171,5 +191,6 @@ def get_current_user_simple():
             "user": frappe.session.user,
             "full_name": user_doc.full_name if 'user_doc' in locals() else None,
             "email": frappe.session.user,
-            "error": str(e)
+            "error": str(e),
+            "debug": {"exception": str(e)}
         }
