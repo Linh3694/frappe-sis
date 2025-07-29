@@ -287,8 +287,10 @@ def get_current_user_simple():
             as_dict=True
         )
         
-        role = "Teacher"  # Default role
-        prefix = "teacher"  # Default prefix
+        role = "Parent"  # Default role changed to Parent for safety
+        prefix = ""      # Default prefix for Parent
+        
+        frappe.log_error(f"PP User lookup for {user_email}: {pp_user_data}")
         
         if pp_user_data and pp_user_data.sis_role:
             if pp_user_data.sis_role == "Parent":
@@ -297,13 +299,45 @@ def get_current_user_simple():
             elif pp_user_data.sis_role == "Teacher":
                 role = "Teacher"
                 prefix = "teacher"
+            elif pp_user_data.sis_role == "Admin":
+                role = "Teacher"  # Admin maps to Teacher
+                prefix = "teacher"
+                
+            frappe.log_error(f"Role from PP User sis_role: {pp_user_data.sis_role} -> {role}")
+        else:
+            # Fallback: Try to find SIS Person directly
+            sis_person = frappe.db.get_value(
+                "SIS Person",
+                {"email": user_email},
+                ["name", "first_name", "last_name", "full_name", "primary_role"],
+                as_dict=True
+            )
+            
+            if sis_person and sis_person.primary_role:
+                primary_role_lower = sis_person.primary_role.lower()
+                if primary_role_lower in ['teacher', 'faculty', 'staff', 'instructor']:
+                    role = "Teacher"
+                    prefix = "teacher"
+                elif primary_role_lower in ['parent', 'guardian']:
+                    role = "Parent"
+                    prefix = ""
+                    
+                frappe.log_error(f"Role from SIS Person primary_role: {sis_person.primary_role} -> {role}")
+                
+                # Update user_info with SIS Person data
+                user_info.update({
+                    "first_name": sis_person.first_name or user_info["first_name"],
+                    "full_name": sis_person.full_name or user_info["full_name"]
+                })
+            else:
+                frappe.log_error(f"No PP User or SIS Person found for {user_email}, using default role: {role}")
         
-        # Nếu có SIS Person, lấy thêm thông tin
+        # Nếu có SIS Person qua PP User, lấy thêm thông tin
         if pp_user_data and pp_user_data.person:
             person_info = frappe.db.get_value(
                 "SIS Person",
                 pp_user_data.person,
-                ["first_name", "last_name", "full_name"],
+                ["first_name", "last_name", "full_name", "primary_role"],
                 as_dict=True
             )
             if person_info:
