@@ -142,8 +142,9 @@ def get_user_info_after_login():
             as_dict=True
         )
         
-        role = "Teacher"  # Default role
-        prefix = "teacher"  # Default prefix
+        role = "Parent"  # Default role changed to Parent
+        prefix = ""      # Default prefix for Parent
+        pp_user_exists = bool(pp_user_data)
         
         if pp_user_data and pp_user_data.sis_role:
             if pp_user_data.sis_role == "Parent":
@@ -152,32 +153,65 @@ def get_user_info_after_login():
             elif pp_user_data.sis_role == "Teacher":
                 role = "Teacher"
                 prefix = "teacher"
-        
-        # Nếu có SIS Person, lấy thêm thông tin
-        if pp_user_data and pp_user_data.person:
-            person_info = frappe.db.get_value(
+            elif pp_user_data.sis_role == "Admin":
+                role = "Teacher"  # Admin maps to Teacher in frontend
+                prefix = "teacher"
+                
+            # Nếu có SIS Person, lấy thêm thông tin
+            if pp_user_data.person:
+                person_info = frappe.db.get_value(
+                    "SIS Person",
+                    pp_user_data.person,
+                    ["first_name", "last_name", "full_name", "primary_role"],
+                    as_dict=True
+                )
+                if person_info:
+                    user_info.update({
+                        "first_name": person_info.first_name or user_info["first_name"],
+                        "full_name": person_info.full_name or user_info["full_name"]
+                    })
+        else:
+            # Fallback: Tìm SIS Person trực tiếp qua email
+            frappe.log_error(f"No PP User found for {user_email}, trying SIS Person lookup")
+            
+            sis_person = frappe.db.get_value(
                 "SIS Person",
-                pp_user_data.person,
-                ["first_name", "last_name", "full_name"],
+                {"email": user_email},
+                ["name", "first_name", "last_name", "full_name", "primary_role"],
                 as_dict=True
             )
-            if person_info:
+            
+            if sis_person:
+                # Update user info from SIS Person
                 user_info.update({
-                    "first_name": person_info.first_name or user_info["first_name"],
-                    "full_name": person_info.full_name or user_info["full_name"]
+                    "first_name": sis_person.first_name or user_info["first_name"],
+                    "full_name": sis_person.full_name or user_info["full_name"]
                 })
-        
+                
+                # Determine role from SIS Person primary_role
+                if sis_person.primary_role:
+                    if sis_person.primary_role.lower() in ['teacher', 'faculty', 'staff', 'instructor']:
+                        role = "Teacher"
+                        prefix = "teacher"
+                    elif sis_person.primary_role.lower() in ['parent', 'guardian']:
+                        role = "Parent"
+                        prefix = ""
+                
+                frappe.log_error(f"Found SIS Person for {user_email}: {sis_person.primary_role} -> {role}")
+                
         return {
             "user": user_email,
             "user_info": user_info,
             "role": role,
             "prefix": prefix,
             "session_valid": True,
-            "pp_user_exists": bool(pp_user_data)
+            "pp_user_exists": pp_user_exists,
+            "fallback_used": not pp_user_exists
         }
         
     except Exception as e:
         frappe.log_error(f"Error in get_user_info_after_login: {str(e)}")
+        # Return safe fallback instead of error
         return {
             "user": frappe.session.user,
             "user_info": {
@@ -188,9 +222,10 @@ def get_user_info_after_login():
                 "user_image": "",
                 "avatar": ""
             },
-            "role": "Teacher",
-            "prefix": "teacher", 
+            "role": "Parent",
+            "prefix": "", 
             "session_valid": True,
+            "pp_user_exists": False,
             "error": str(e)
         }
 
