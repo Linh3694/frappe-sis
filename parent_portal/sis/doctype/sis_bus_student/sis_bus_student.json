@@ -1,0 +1,77 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:BUS-STUDENT-{#####}",
+ "creation": "2024-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "bus_schedule_id",
+  "student_id",
+  "pickup_point",
+  "dropoff_point"
+ ],
+ "fields": [
+  {
+   "fieldname": "bus_schedule_id",
+   "fieldtype": "Link",
+   "label": "Lịch trình xe bus",
+   "options": "SIS Bus Schedule",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "student_id",
+   "fieldtype": "Link",
+   "label": "Học sinh",
+   "options": "SIS Student",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "pickup_point",
+   "fieldtype": "Text Editor",
+   "label": "Điểm đón"
+  },
+  {
+   "fieldname": "dropoff_point",
+   "fieldtype": "Text Editor",
+   "label": "Điểm trả"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "SIS",
+ "name": "SIS Bus Student",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Teacher",
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "bus_schedule_id",
+ "track_changes": 1
+}

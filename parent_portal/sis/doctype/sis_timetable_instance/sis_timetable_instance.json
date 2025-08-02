@@ -1,0 +1,100 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:TIMETABLE INSTANCE-{#####}",
+ "creation": "2024-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "timetable_id",
+  "class_id",
+  "subject_assignment_id",
+  "date",
+  "period",
+  "room_id",
+  "teacher_id",
+  "last_updated",
+  "calendar_id"
+ ],
+ "fields": [
+  {
+   "fieldname": "timetable_id",
+   "fieldtype": "Link",
+   "label": "Thời khóa biểu",
+   "options": "SIS Timetable"
+  },
+  {
+   "fieldname": "class_id",
+   "fieldtype": "Link",
+   "label": "Lớp học",
+   "options": "SIS Class"
+  },
+  {
+   "fieldname": "subject_assignment_id",
+   "fieldtype": "Link",
+   "label": "Phân công giảng dạy",
+   "options": "SIS Subject Assignment"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Ngày"
+  },
+  {
+   "fieldname": "period",
+   "fieldtype": "Int",
+   "label": "Tiết"
+  },
+  {
+   "fieldname": "room_id",
+   "fieldtype": "Link",
+   "label": "Phòng học",
+   "options": "ERP Administrative Room"
+  },
+  {
+   "fieldname": "teacher_id",
+   "fieldtype": "Link",
+   "label": "Giáo viên",
+   "options": "SIS Teacher"
+  },
+  {
+   "fieldname": "last_updated",
+   "fieldtype": "Datetime",
+   "label": "Cập nhật lần cuối"
+  },
+  {
+   "fieldname": "calendar_id",
+   "fieldtype": "Link",
+   "label": "Lịch",
+   "options": "SIS Calendar"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "SIS",
+ "name": "SIS Timetable Instance",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "timetable_id",
+ "track_changes": 1
+}

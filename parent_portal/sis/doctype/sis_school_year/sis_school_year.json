@@ -1,72 +1,66 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2024-05-23 10:11:30.875144",
+ "autoname": "format:SCHOOL YEAR-{#####}",
+ "creation": "2024-01-01 00:00:00.000000",
  "doctype": "DocType",
+ "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "title",
-  "status",
-  "first_day",
-  "last_day",
-  "sequence_number"
+  "title_vn",
+  "title_en",
+  "start_time",
+  "end_time",
+  "is_enable",
+  "campus"
  ],
  "fields": [
   {
-   "fieldname": "title",
+   "fieldname": "title_vn",
    "fieldtype": "Data",
-   "in_filter": 1,
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Title",
-   "reqd": 1
+   "label": "Tên năm học (Tiếng Việt)",
+   "reqd": 1,
+   "in_list_view": 1
   },
   {
-   "default": "Current",
-   "fieldname": "status",
-   "fieldtype": "Select",
-   "in_filter": 1,
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Status",
-   "options": "Past\nCurrent\nUpcoming",
-   "reqd": 1
+   "fieldname": "title_en",
+   "fieldtype": "Data",
+   "label": "Tên năm học (Tiếng Anh)",
+   "reqd": 1,
+   "in_list_view": 1
   },
   {
-   "fieldname": "first_day",
+   "fieldname": "start_time",
    "fieldtype": "Date",
-   "in_filter": 1,
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "First day",
+   "label": "Ngày bắt đầu",
    "reqd": 1
   },
   {
-   "fieldname": "last_day",
+   "fieldname": "end_time",
    "fieldtype": "Date",
-   "in_filter": 1,
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Last day",
+   "label": "Ngày kết thúc",
    "reqd": 1
   },
   {
-   "fieldname": "sequence_number",
-   "fieldtype": "Int",
-   "in_filter": 1,
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Sequence Number",
-   "read_only": 1,
-   "unique": 1
+   "fieldname": "is_enable",
+   "fieldtype": "Check",
+   "label": "Kích hoạt"
+  },
+  {
+   "fieldname": "campus",
+   "fieldtype": "Link",
+   "label": "Campus",
+   "options": "SIS Campus",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-24 10:29:18.569786",
+ "modified": "2024-01-01 00:00:00.000000",
  "modified_by": "Administrator",
  "module": "SIS",
  "name": "SIS School Year",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {
@@ -82,9 +76,9 @@
    "write": 1
   }
  ],
- "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
- "title_field": "title"
+ "title_field": "title_vn",
+ "track_changes": 1
 }

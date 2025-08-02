@@ -1,0 +1,92 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:ATTENDANCE-DETAIL-{#####}",
+ "creation": "2024-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "event_id",
+  "leave_application_attendance_id",
+  "leave_application_id",
+  "class_student_id",
+  "status",
+  "note"
+ ],
+ "fields": [
+  {
+   "fieldname": "event_id",
+   "fieldtype": "Link",
+   "label": "Sự kiện",
+   "options": "SIS Event"
+  },
+  {
+   "fieldname": "leave_application_attendance_id",
+   "fieldtype": "Link",
+   "label": "Đơn nghỉ - Điểm danh",
+   "options": "SIS Leave Application Attendance"
+  },
+  {
+   "fieldname": "leave_application_id",
+   "fieldtype": "Link",
+   "label": "Đơn xin nghỉ",
+   "options": "SIS Leave Application"
+  },
+  {
+   "fieldname": "class_student_id",
+   "fieldtype": "Link",
+   "label": "Học sinh lớp",
+   "options": "SIS Class Student",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Trạng thái",
+   "options": "present\nabsent\nlate\nexcused",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "note",
+   "fieldtype": "Text Editor",
+   "label": "Ghi chú"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "SIS",
+ "name": "SIS Attendance Detail",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Teacher",
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "class_student_id",
+ "track_changes": 1
+}

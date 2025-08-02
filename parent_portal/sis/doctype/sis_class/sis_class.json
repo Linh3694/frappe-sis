@@ -1,0 +1,104 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:CLASS-{#####}",
+ "creation": "2024-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "title",
+  "school_year_id",
+  "education_grade",
+  "academic_program",
+  "hoomroom_teacher",
+  "vice_hoomroom_teacher",
+  "class_type",
+  "start_time",
+  "end_time"
+ ],
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "Tên lớp",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "school_year_id",
+   "fieldtype": "Link",
+   "label": "Năm học",
+   "options": "SIS School Year",
+   "reqd": 1
+  },
+  {
+   "fieldname": "education_grade",
+   "fieldtype": "Link",
+   "label": "Khối học",
+   "options": "SIS Education Grade",
+   "reqd": 1
+  },
+  {
+   "fieldname": "academic_program",
+   "fieldtype": "Link",
+   "label": "Chương trình học",
+   "options": "SIS Academic Program"
+  },
+  {
+   "fieldname": "hoomroom_teacher",
+   "fieldtype": "Link",
+   "label": "Giáo viên chủ nhiệm",
+   "options": "SIS Teacher"
+  },
+  {
+   "fieldname": "vice_hoomroom_teacher",
+   "fieldtype": "Link",
+   "label": "Giáo viên phụ trách",
+   "options": "SIS Teacher"
+  },
+  {
+   "fieldname": "class_type",
+   "fieldtype": "Select",
+   "label": "Loại lớp",
+   "options": "regular\nmix"
+  },
+  {
+   "fieldname": "start_time",
+   "fieldtype": "Date",
+   "label": "Ngày bắt đầu"
+  },
+  {
+   "fieldname": "end_time",
+   "fieldtype": "Date",
+   "label": "Ngày kết thúc"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "SIS",
+ "name": "SIS Class",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "title",
+ "track_changes": 1
+}

@@ -1,0 +1,85 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:CALENDAR-{#####}",
+ "creation": "2024-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "calendar_name",
+  "calendar_type",
+  "start_date",
+  "end_date",
+  "start_period",
+  "end_period",
+  "note"
+ ],
+ "fields": [
+  {
+   "fieldname": "calendar_name",
+   "fieldtype": "Data",
+   "label": "Tên lịch",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "calendar_type",
+   "fieldtype": "Select",
+   "label": "Loại lịch",
+   "options": "holiday\nschool_event\nexam"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Ngày bắt đầu"
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "Ngày kết thúc"
+  },
+  {
+   "fieldname": "start_period",
+   "fieldtype": "Int",
+   "label": "Tiết bắt đầu"
+  },
+  {
+   "fieldname": "end_period",
+   "fieldtype": "Int",
+   "label": "Tiết kết thúc"
+  },
+  {
+   "fieldname": "note",
+   "fieldtype": "Text Editor",
+   "label": "Ghi chú"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "SIS",
+ "name": "SIS Calendar",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "calendar_name",
+ "track_changes": 1
+}

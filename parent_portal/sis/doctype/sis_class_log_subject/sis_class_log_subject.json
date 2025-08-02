@@ -1,0 +1,109 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:CLASS-LOG-SUBJECT-{#####}",
+ "creation": "2024-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "timetable_instance_id",
+  "score",
+  "general_comment",
+  "section_break_audit",
+  "created_at",
+  "created_by",
+  "column_break_audit",
+  "update_at",
+  "update_by"
+ ],
+ "fields": [
+  {
+   "fieldname": "timetable_instance_id",
+   "fieldtype": "Link",
+   "label": "Phiên thời khóa biểu",
+   "options": "SIS Timetable Instance",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "score",
+   "fieldtype": "Data",
+   "label": "Điểm số"
+  },
+  {
+   "fieldname": "general_comment",
+   "fieldtype": "Text Editor",
+   "label": "Nhận xét chung"
+  },
+  {
+   "fieldname": "section_break_audit",
+   "fieldtype": "Section Break",
+   "label": "Thông tin kiểm soát"
+  },
+  {
+   "fieldname": "created_at",
+   "fieldtype": "Datetime",
+   "label": "Ngày tạo",
+   "read_only": 1
+  },
+  {
+   "fieldname": "created_by",
+   "fieldtype": "Link",
+   "label": "Người tạo",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_audit",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "update_at",
+   "fieldtype": "Datetime",
+   "label": "Ngày cập nhật",
+   "read_only": 1
+  },
+  {
+   "fieldname": "update_by",
+   "fieldtype": "Link",
+   "label": "Người cập nhật",
+   "options": "User",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "SIS",
+ "name": "SIS Class Log Subject",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Teacher",
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "timetable_instance_id",
+ "track_changes": 1
+}

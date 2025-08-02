@@ -1,63 +1,38 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2024-05-24 11:28:43.321720",
+ "autoname": "format:FAMILY-{#####}",
+ "creation": "2024-01-01 00:00:00.000000",
  "doctype": "DocType",
+ "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "family_key",
-  "home_address",
-  "status",
-  "children",
-  "guardians"
+  "student_id",
+  "guardian_id"
  ],
  "fields": [
   {
-   "fieldname": "home_address",
-   "fieldtype": "Data",
-   "in_filter": 1,
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Home Address",
+   "fieldname": "student_id",
+   "fieldtype": "Link",
+   "label": "Học sinh",
+   "options": "SIS Student",
    "reqd": 1
   },
   {
-   "default": "Married",
-   "fieldname": "status",
-   "fieldtype": "Select",
-   "in_filter": 1,
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Status",
-   "options": "Married\nSeparated\nDivorced\nDe Facto\nOther\nSingle",
+   "fieldname": "guardian_id",
+   "fieldtype": "Link",
+   "label": "Phụ huynh",
+   "options": "SIS Guardian",
    "reqd": 1
-  },
-  {
-   "fieldname": "guardians",
-   "fieldtype": "Table",
-   "label": "Guardians",
-   "options": "SIS Family Guardian"
-  },
-  {
-   "fieldname": "children",
-   "fieldtype": "Table",
-   "label": "Children",
-   "options": "SIS Family Child"
-  },
-  {
-   "fieldname": "family_key",
-   "fieldtype": "Data",
-   "in_standard_filter": 1,
-   "label": "Family Key",
-   "search_index": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-30 10:22:11.124093",
+ "modified": "2024-01-01 00:00:00.000000",
  "modified_by": "Administrator",
  "module": "SIS",
  "name": "SIS Family",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {
@@ -75,5 +50,7 @@
  ],
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "student_id",
+ "track_changes": 1
 }

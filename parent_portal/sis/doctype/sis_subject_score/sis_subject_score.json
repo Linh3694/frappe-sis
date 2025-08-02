@@ -1,0 +1,128 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:SUBJECT-SCORE-{#####}",
+ "creation": "2024-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "score_board_id",
+  "student_id",
+  "class_id",
+  "subject_assignment_id",
+  "assessment_criteria_id",
+  "title",
+  "score",
+  "note",
+  "is_snapshot",
+  "status",
+  "last_updated"
+ ],
+ "fields": [
+  {
+   "fieldname": "score_board_id",
+   "fieldtype": "Link",
+   "label": "Bảng điểm",
+   "options": "SIS Score Board",
+   "reqd": 1
+  },
+  {
+   "fieldname": "student_id",
+   "fieldtype": "Link",
+   "label": "Học sinh",
+   "options": "SIS Student",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "class_id",
+   "fieldtype": "Link",
+   "label": "Lớp học",
+   "options": "SIS Class",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "subject_assignment_id",
+   "fieldtype": "Link",
+   "label": "Phân công giảng dạy",
+   "options": "SIS Subject Assignment"
+  },
+  {
+   "fieldname": "assessment_criteria_id",
+   "fieldtype": "Link",
+   "label": "Tiêu chí đánh giá",
+   "options": "SIS Assessment Criteria"
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "Tiêu đề",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "score",
+   "fieldtype": "Data",
+   "label": "Điểm số",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "note",
+   "fieldtype": "Text Editor",
+   "label": "Ghi chú"
+  },
+  {
+   "fieldname": "is_snapshot",
+   "fieldtype": "Check",
+   "label": "Là snapshot"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Trạng thái",
+   "options": "open\nlocked",
+   "default": "open"
+  },
+  {
+   "fieldname": "last_updated",
+   "fieldtype": "Datetime",
+   "label": "Cập nhật lần cuối",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "SIS",
+ "name": "SIS Subject Score",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Teacher",
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "student_id",
+ "track_changes": 1
+}

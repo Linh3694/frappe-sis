@@ -1,201 +1,101 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2024-05-24 10:47:14.972776",
+ "autoname": "format:PERSON-{#####}",
+ "creation": "2024-01-01 00:00:00.000000",
  "doctype": "DocType",
+ "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "avatar",
-  "section_break_dwzp",
   "first_name",
   "middle_name",
   "last_name",
-  "full_name",
-  "column_break_damb",
-  "english_name",
-  "common_name",
+  "column_break_3",
   "email",
   "phone_number",
-  "section_break_izts",
-  "date_of_birth",
+  "section_break_6",
+  "dob",
   "gender",
-  "column_break_zvtr",
-  "nationality",
-  "primary_role",
-  "section_break_rbju",
-  "company",
-  "job_title",
-  "column_break_ugbo",
-  "address",
-  "province",
-  "district",
-  "ward"
+  "column_break_9",
+  "username",
+  "password"
  ],
  "fields": [
   {
    "fieldname": "first_name",
    "fieldtype": "Data",
-   "in_filter": 1,
-   "label": "First Name",
+   "in_list_view": 1,
+   "label": "Tên",
    "reqd": 1
   },
   {
    "fieldname": "middle_name",
    "fieldtype": "Data",
-   "in_filter": 1,
-   "label": "Middle Name"
+   "label": "Tên đệm"
   },
   {
    "fieldname": "last_name",
    "fieldtype": "Data",
-   "in_filter": 1,
-   "label": "Last Name",
+   "in_list_view": 1,
+   "label": "Họ",
    "reqd": 1
   },
   {
-   "fieldname": "full_name",
-   "fieldtype": "Data",
-   "in_filter": 1,
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Full Name",
-   "read_only": 1
-  },
-  {
-   "fieldname": "column_break_damb",
+   "fieldname": "column_break_3",
    "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "english_name",
-   "fieldtype": "Data",
-   "in_filter": 1,
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "English Name"
-  },
-  {
-   "fieldname": "common_name",
-   "fieldtype": "Data",
-   "in_filter": 1,
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Common Name"
   },
   {
    "fieldname": "email",
    "fieldtype": "Data",
-   "in_filter": 1,
    "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Email"
+   "label": "Email",
+   "options": "Email"
   },
   {
    "fieldname": "phone_number",
    "fieldtype": "Data",
-   "in_filter": 1,
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Phone Number"
+   "label": "Số điện thoại",
+   "options": "Phone"
   },
   {
-   "fieldname": "section_break_izts",
-   "fieldtype": "Section Break"
+   "fieldname": "section_break_6",
+   "fieldtype": "Section Break",
+   "label": "Thông tin cá nhân"
   },
   {
-   "fieldname": "date_of_birth",
+   "fieldname": "dob",
    "fieldtype": "Date",
-   "in_filter": 1,
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Date of Birth"
+   "label": "Ngày sinh"
   },
   {
    "fieldname": "gender",
    "fieldtype": "Select",
-   "in_filter": 1,
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Gender",
-   "options": "Male\nFemale",
-   "reqd": 1
+   "label": "Giới tính",
+   "options": "Male\nFemale\nOthers"
   },
   {
-   "fieldname": "nationality",
-   "fieldtype": "Data",
-   "in_filter": 1,
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Nationality"
-  },
-  {
-   "fieldname": "section_break_dwzp",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "avatar",
-   "fieldtype": "Attach Image",
-   "label": "Avatar"
-  },
-  {
-   "fieldname": "column_break_zvtr",
+   "fieldname": "column_break_9",
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "primary_role",
-   "fieldtype": "Select",
-   "in_filter": 1,
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Primary Role",
-   "options": "Student\nGuardian\nTeacher\nTA\nNanny\nStaff",
-   "reqd": 1
-  },
-  {
-   "fieldname": "province",
+   "fieldname": "username",
    "fieldtype": "Data",
-   "label": "Province"
+   "label": "Tên đăng nhập",
+   "unique": 1
   },
   {
-   "fieldname": "district",
-   "fieldtype": "Data",
-   "label": "District"
-  },
-  {
-   "fieldname": "ward",
-   "fieldtype": "Data",
-   "label": "Ward"
-  },
-  {
-   "fieldname": "company",
-   "fieldtype": "Data",
-   "label": "Company"
-  },
-  {
-   "fieldname": "job_title",
-   "fieldtype": "Data",
-   "label": "Job Title"
-  },
-  {
-   "fieldname": "section_break_rbju",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "address",
-   "fieldtype": "Data",
-   "label": "Address"
-  },
-  {
-   "fieldname": "column_break_ugbo",
-   "fieldtype": "Column Break"
+   "fieldname": "password",
+   "fieldtype": "Password",
+   "label": "Mật khẩu"
   }
  ],
- "image_field": "avatar",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-30 15:53:18.858562",
+ "modified": "2024-01-01 00:00:00.000000",
  "modified_by": "Administrator",
  "module": "SIS",
  "name": "SIS Person",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {
@@ -209,20 +109,11 @@
    "role": "System Manager",
    "share": 1,
    "write": 1
-  },
-  {
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "PP User",
-   "share": 1
   }
  ],
- "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
- "title_field": "full_name"
+ "title_field": "first_name",
+ "track_changes": 1
 }

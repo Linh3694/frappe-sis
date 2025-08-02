@@ -1,0 +1,97 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:ASSESSMENT-CRITERIA-{#####}",
+ "creation": "2024-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "education_grade_id",
+  "academic_program_subject_id",
+  "title_vn",
+  "title_en",
+  "weight",
+  "score_type",
+  "limit_score_type"
+ ],
+ "fields": [
+  {
+   "fieldname": "education_grade_id",
+   "fieldtype": "Link",
+   "label": "Khối học",
+   "options": "SIS Education Grade",
+   "reqd": 1
+  },
+  {
+   "fieldname": "academic_program_subject_id",
+   "fieldtype": "Link",
+   "label": "Chương trình - Môn học",
+   "options": "SIS Academic Program Subject",
+   "reqd": 1
+  },
+  {
+   "fieldname": "title_vn",
+   "fieldtype": "Data",
+   "label": "Tên tiêu chí (Tiếng Việt)",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "title_en",
+   "fieldtype": "Data",
+   "label": "Tên tiêu chí (Tiếng Anh)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "weight",
+   "fieldtype": "Float",
+   "label": "Trọng số"
+  },
+  {
+   "fieldname": "score_type",
+   "fieldtype": "Select",
+   "label": "Loại điểm",
+   "options": "numeric\nletter\npass_fail"
+  },
+  {
+   "fieldname": "limit_score_type",
+   "fieldtype": "Int",
+   "label": "Giới hạn điểm"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "SIS",
+ "name": "SIS Assessment Criteria",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Teacher",
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "title_vn",
+ "track_changes": 1
+}

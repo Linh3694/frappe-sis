@@ -1,58 +1,59 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2024-06-17 14:15:47.403915",
+ "autoname": "format:COURSE-{#####}",
+ "creation": "2024-01-01 00:00:00.000000",
  "doctype": "DocType",
+ "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "title",
-  "short_title",
-  "description",
-  "program_type"
+  "menu_id",
+  "title_vn",
+  "title_en",
+  "food_bank_id",
+  "calorie"
  ],
  "fields": [
   {
-   "fieldname": "title",
-   "fieldtype": "Data",
-   "in_filter": 1,
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Title",
+   "fieldname": "menu_id",
+   "fieldtype": "Link",
+   "label": "Thực đơn",
+   "options": "SIS Menu",
    "reqd": 1,
-   "search_index": 1
+   "in_list_view": 1
   },
   {
-   "fieldname": "short_title",
+   "fieldname": "title_vn",
    "fieldtype": "Data",
-   "in_filter": 1,
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Short Title",
+   "label": "Tên món (Tiếng Việt)",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "title_en",
+   "fieldtype": "Data",
+   "label": "Tên món (Tiếng Anh)",
    "reqd": 1
   },
   {
-   "fieldname": "description",
-   "fieldtype": "Small Text",
-   "in_list_view": 1,
-   "label": "Description"
+   "fieldname": "food_bank_id",
+   "fieldtype": "Link",
+   "label": "Ngân hàng thức ăn",
+   "options": "SIS Food Bank"
   },
   {
-   "fieldname": "program_type",
-   "fieldtype": "Select",
-   "in_filter": 1,
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Program Type",
-   "options": "VP\nIP\nSSC\nOther",
-   "reqd": 1
+   "fieldname": "calorie",
+   "fieldtype": "Float",
+   "label": "Calories"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-23 18:10:30.962961",
+ "modified": "2024-01-01 00:00:00.000000",
  "modified_by": "Administrator",
  "module": "SIS",
  "name": "SIS Course",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {
@@ -66,12 +67,18 @@
    "role": "System Manager",
    "share": 1,
    "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Teacher",
+   "write": 1
   }
  ],
- "show_title_field_in_link": 1,
- "sort_field": "creation",
+ "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
- "title_field": "title",
- "translated_doctype": 1
+ "title_field": "menu_id",
+ "track_changes": 1
 }

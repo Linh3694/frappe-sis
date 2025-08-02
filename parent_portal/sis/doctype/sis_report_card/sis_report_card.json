@@ -1,0 +1,100 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:REPORT-CARD-{#####}",
+ "creation": "2024-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "student_id",
+  "class_id",
+  "report_card_form",
+  "term",
+  "general_remark",
+  "create_date",
+  "status"
+ ],
+ "fields": [
+  {
+   "fieldname": "student_id",
+   "fieldtype": "Link",
+   "label": "Học sinh",
+   "options": "SIS Student",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "class_id",
+   "fieldtype": "Link",
+   "label": "Lớp học",
+   "options": "SIS Class",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "report_card_form",
+   "fieldtype": "Select",
+   "label": "Loại phiếu điểm",
+   "options": "vn\ngov\nint"
+  },
+  {
+   "fieldname": "term",
+   "fieldtype": "Select",
+   "label": "Học kỳ",
+   "options": "half_sem_1\nsem_1\nhalf_sem_2\nsem_2"
+  },
+  {
+   "fieldname": "general_remark",
+   "fieldtype": "Text Editor",
+   "label": "Nhận xét chung"
+  },
+  {
+   "fieldname": "create_date",
+   "fieldtype": "Datetime",
+   "label": "Ngày tạo",
+   "read_only": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Trạng thái",
+   "options": "open\nfinalized\nlocked",
+   "default": "open"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "SIS",
+ "name": "SIS Report Card",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Teacher",
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "student_id",
+ "track_changes": 1
+}

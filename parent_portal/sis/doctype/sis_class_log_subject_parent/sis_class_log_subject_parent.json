@@ -1,0 +1,71 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:CLASS-LOG-SUBJECT-PARENT-{#####}",
+ "creation": "2024-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "class_log_parent_id",
+  "timetable_instance_id",
+  "general_comment"
+ ],
+ "fields": [
+  {
+   "fieldname": "class_log_parent_id",
+   "fieldtype": "Link",
+   "label": "Nhật ký phụ huynh",
+   "options": "SIS Class Log Parent",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "timetable_instance_id",
+   "fieldtype": "Link",
+   "label": "Phiên thời khóa biểu",
+   "options": "SIS Timetable Instance",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "general_comment",
+   "fieldtype": "Text Editor",
+   "label": "Nhận xét chung"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "SIS",
+ "name": "SIS Class Log Subject Parent",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Teacher",
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "class_log_parent_id",
+ "track_changes": 1
+}

@@ -1,51 +1,61 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2024-06-17 13:47:46.127292",
+ "autoname": "format:TIMETABLE COLUMN-{#####}",
+ "creation": "2024-01-01 00:00:00.000000",
  "doctype": "DocType",
+ "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "title",
-  "short_title",
-  "section_break_fkxq",
-  "timetable_column_row"
+  "education_stage_id",
+  "period_priority",
+  "period_type",
+  "period_name",
+  "start_time",
+  "end_time"
  ],
  "fields": [
   {
-   "fieldname": "title",
-   "fieldtype": "Data",
-   "in_filter": 1,
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Title",
+   "fieldname": "education_stage_id",
+   "fieldtype": "Link",
+   "label": "Cấp học",
+   "options": "SIS Education Stage",
    "reqd": 1
   },
   {
-   "fieldname": "short_title",
+   "fieldname": "period_priority",
+   "fieldtype": "Int",
+   "label": "Thứ tự tiết"
+  },
+  {
+   "fieldname": "period_type",
+   "fieldtype": "Select",
+   "label": "Loại tiết",
+   "options": "study\nnon-study"
+  },
+  {
+   "fieldname": "period_name",
    "fieldtype": "Data",
-   "in_filter": 1,
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Short Title",
-   "reqd": 1
+   "label": "Tên tiết"
   },
   {
-   "fieldname": "section_break_fkxq",
-   "fieldtype": "Section Break"
+   "fieldname": "start_time",
+   "fieldtype": "Time",
+   "label": "Giờ bắt đầu"
   },
   {
-   "fieldname": "timetable_column_row",
-   "fieldtype": "Table",
-   "label": "Timetable Column Row",
-   "options": "SIS Timetable Column Row"
+   "fieldname": "end_time",
+   "fieldtype": "Time",
+   "label": "Giờ kết thúc"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-03 15:27:46.018044",
+ "modified": "2024-01-01 00:00:00.000000",
  "modified_by": "Administrator",
  "module": "SIS",
  "name": "SIS Timetable Column",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {
@@ -61,10 +71,9 @@
    "write": 1
   }
  ],
- "show_title_field_in_link": 1,
- "sort_field": "creation",
+ "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
- "title_field": "title",
- "translated_doctype": 1
+ "title_field": "education_stage_id",
+ "track_changes": 1
 }

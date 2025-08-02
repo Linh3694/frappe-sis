@@ -1,23 +1,27 @@
-# Copyright (c) 2024, Digital Learning Team and contributors
+# Copyright (c) 2024, Your Organization and contributors
 # For license information, please see license.txt
 
-# import frappe
+import frappe
 from frappe.model.document import Document
 
 
 class SISCourse(Document):
-	# begin: auto-generated types
-	# This code is auto-generated. Do not modify anything in this block.
-
-	from typing import TYPE_CHECKING
-
-	if TYPE_CHECKING:
-		from frappe.types import DF
-
-		description: DF.SmallText | None
-		program_type: DF.Literal["VP", "IP", "SSC", "Other"]
-		short_title: DF.Data
-		title: DF.Data
-	# end: auto-generated types
-
-	pass
+	def before_insert(self):
+		# Tự động set thông tin audit khi tạo mới
+		if hasattr(self, 'create_at'):
+			self.create_at = frappe.utils.now()
+		if hasattr(self, 'create_date'):
+			self.create_date = frappe.utils.now()
+		if hasattr(self, 'submitted_at') and not self.submitted_at:
+			self.submitted_at = frappe.utils.now()
+	
+	def before_save(self):
+		# Tự động set thông tin audit khi cập nhật
+		if hasattr(self, 'update_at'):
+			self.update_at = frappe.utils.now()
+		if hasattr(self, 'update_by'):
+			self.update_by = frappe.session.user
+		if hasattr(self, 'last_update'):
+			self.last_update = frappe.utils.now()
+		if hasattr(self, 'last_updated'):
+			self.last_updated = frappe.utils.now()

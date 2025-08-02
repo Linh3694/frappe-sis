@@ -61,11 +61,13 @@ def execute():
     if not frappe.conf.developer_mode:
         print("Can only seed data in developer mode.")
         return
-    school_year["name"] = insert_school_year(school_year).name
-    for grade_level in grade_levels:
-        grade_level["name"] = insert_grade_level(grade_level).name
-    for school_class in school_classes:
-        school_class["name"] = insert_school_class(school_class).name
+    # Temporarily disable seeding until DocTypes are updated
+    print("Seeding temporarily disabled - DocTypes need to be updated")
+    # school_year["name"] = insert_school_year(school_year).name
+    # for grade_level in grade_levels:
+    #     grade_level["name"] = insert_grade_level(grade_level).name
+    # for school_class in school_classes:
+    #     school_class["name"] = insert_school_class(school_class).name
 
 
 def delete_all(doctype):
